@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./fonts/Ubuntu-Regular.eot');
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+    url('./fonts/Ubuntu-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Ubuntu-Regular.woff2') format('woff2'),
+    url('./fonts/Ubuntu-Regular.woff') format('woff'),
+    url('./fonts/Ubuntu-Regular.ttf') format('truetype'),
+    url('./fonts/Ubuntu-Regular.svg#Ubuntu-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./fonts/Ubuntu-Italic.eot');
+  src: local('Ubuntu Italic'), local('Ubuntu-Italic'),
+    url('./fonts//Ubuntu-Italic.eot?#iefix') format('embedded-opentype'),
+    url('./fonts//Ubuntu-Italic.woff2') format('woff2'),
+    url('./fonts//Ubuntu-Italic.woff') format('woff'),
+    url('./fonts//Ubuntu-Italic.ttf') format('truetype'),
+    url('./fonts//Ubuntu-Italic.svg#Ubuntu-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./fonts/Ubuntu-Light.eot');
+  src: local('Ubuntu Light'), local('Ubuntu-Light'),
+    url('./fonts/Ubuntu-Light.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Ubuntu-Light.woff2') format('woff2'),
+    url('./fonts/Ubuntu-Light.woff') format('woff'),
+    url('./fonts/Ubuntu-Light.ttf') format('truetype'),
+    url('./fonts/Ubuntu-Light.svg#Ubuntu-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+:root{
+  --color-code-white: white;
+  --color-comment-gray: #a0aec0;
+  --color-code-purple: #d9a9ff;
+}
+
+body{
+min-width: 290px;
+color: #4d4e53;
+background-color: #fffdf9;
+font-family: "Ubuntu",
+"Open Sans",
+Arial,
+sans-serif;
+line-height: 1.7;
+font-size: 18px;
+}
+
+#navbar {
+  position: fixed;
+  min-width: 390px;
+  width: 450px;
+  background-color: #8ac6d1;  
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+#main-doc{
+  margin-left: 430px;
+}
+
+#navbar ul {
+  height: 88%; 
+  
+}
+
+#navbar li{
+  color: #beebe9;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 15px 30px;
+  color: #fffdf9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title-section{
+  color: #4d4e53;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: #ffe3ed;
+  padding: 10px; 
+}
+
+.language-css{
+  display: flex;
+  padding: 0;
+  background-color: #2d3748;
+  font-size: .875rem;
+  line-height: 1.5; 
+  color: white;
+  border-radius: .5rem;
+}
+
+.rule{
+  color: var(--color-code-purple);
+}
+.comment{
+color: var(--color-comment-gray);
+}
+  
+.code{
+  background-color: #f7fafc;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: #805ad5;
+}

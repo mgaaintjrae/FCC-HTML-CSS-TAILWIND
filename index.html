@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation technique | TailwindCSS</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <nav id="navbar" class="fixed top-0 left-0 h-full">
+    <header class="font-black m-6 text-center text-3xl font-thin ">TailWind CSS Documention</header>
+    <ul class="p-0 overflow-y-auto overflow-x-hidden ">
+      <li><a href="#Installation" class="nav-link">Installation</a></li>
+      <li><a href="#Preflight" class="nav-link">Preflight</a></li>
+      <li><a href="#Responsive_Design" class="nav-link">Responsive Design</a></li>
+      <li><a href="#Layout" class="nav-link">Layout</a></li>
+      <li><a href="#Flexbox" class="nav-link">Flexbox</a></li>
+      <li><a href="#Grid" class="nav-link">Grid</a></li>
+      <li><a href="#Spacing" class="nav-link">Spacing</a></li>
+      <li><a href="#Sizing" class="nav-link">Sizing</a></li>
+      <li><a href="#Typography" class="nav-link">Typography</a></li>
+      <li><a href="#Backgrounds" class="nav-link">Backgrounds</a></li>
+      <li><a href="#Borders" class="nav-link">Borders</a></li>
+      <li><a href="#Tables" class="nav-link">Tables</a></li>
+      <li><a href="#Effects" class="nav-link">Effects</a></li>
+      <li><a href="#Transtions" class="nav-link">Transitions</a></li>
+      <li><a href="#Transforms" class="nav-link">Transforms</a></li>
+      <li><a href="#Interactivity" class="nav-link">Interactivity</a></li>
+      <li><a href="#SVG" class="nav-link">SVG</a></li>
+      <li><a href="#Accessibitility" class="nav-link">Accessibility</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-doc" class="absolute p-12 mb-8">
+
+    <section id="Installation" class="main-section">
+      <header class="title-section">Installation</header>
+      <article class="p-4">
+
+        <p class="mb-8">
+          <span class="bg-gray-700 text-white p-2 px-3 rounded-full">1</span>
+          <h2 class="mt-3 text-xl font-bold">Installez Tailwind via npm</h2>
+          Pour la plupart des projets (et pour profiter des fonctionnalités de personnalisation de Tailwind), vous
+          voudrez installer Tailwind via npm.
+          <pre class="language-css m-8">
+            <code>
+              # Using npm
+              npm install tailwindcss
+
+              # Using Yarn
+              yarn add tailwindcss
+            </code>
+          </pre>
+        </p>
+
+        <p>
+          <span class="bg-gray-700 text-white p-2 px-3 rounded-full">2</span>
+          <h2 class="mt-3 text-xl font-bold">Ajoutez Tailwind à votre CSS</h2>
+          Utilisez la <code class="code">@tailwind</code> directive pour injecter de Tailwind <code
+            class="code">base</code>,
+          <code class="code">components</code>
+          et les <code class="code">utilities</code> styles
+          dans votre
+          CSS:
+          <pre class="language-css m-8">
+            <code>
+              @tailwind base;
+
+              @tailwind components;
+
+              @tailwind utilities;
+            </code>
+          </pre>
+
+          Tailwind échangera ces directives au moment de la construction avec tous ses CSS générés.
+        </p>
+
+        <p class="mt-5">
+          <span class="bg-gray-700 text-white p-2 px-3 rounded-full">ou</span>
+          <h2 class="mt-3 text-xl font-bold">Utilisation de Tailwind via CDN</h2>
+          <pre class="language-css m-8">
+            <code>
+              link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"
+            </code>
+          </pre>
+        </p>
+      </article>
+    </section>
+
+    <section id="Preflight" class="main-section">
+      <header class="title-section">Preflight</header>
+      <article class="p-4">
+        <p>
+          Tailwind injecte automatiquement ces styles lorsque vous incluez @tailwind basedans votre CSS:
+          <br>
+          <pre class="language-css m-8">
+            <code>
+              @tailwind base; /* Preflight will be injected here */
+
+              @tailwind components;
+
+              @tailwind utilities;
+            </code>
+          </pre>
+        </p>
+        <p>
+          <h2>Les marges par défaut sont supprimées</h2>
+        </p>
+      </article>
+    </section>
+
+    <section id="Responsive_Design" class="main-section">
+      <header class="title-section">Responsive Design</header>
+      <article class="p-4">
+        <p>
+          Pour ajouter un utilitaire mais pour qu'il ne prenne effet qu'à un certain point d'arrêt, tout ce que vous
+          avez
+          à faire est de préfixer l'utilitaire avec le nom du point d'arrêt, suivi du :caractère:
+
+          <pre class="language-css m-8">
+          <code>
+            /* Width of 16 by default, 32 on medium screens, and 48 on large screens */
+            img class="w-16 md:w-32 lg:w-48" src="..."
+          </code>
+        </pre>
+          <br>
+          <pre class="language-css m-8">
+          <code>
+            /* Small (sm) */
+            @media (min-width: 640px) { /* ... */ }
+
+            /* Medium (md) */
+            @media (min-width: 768px) { /* ... */ }
+
+            /* Large (lg) */
+            @media (min-width: 1024px) { /* ... */ }
+
+            /* Extra Large (xl) */
+            @media (min-width: 1280px) { /* ... */ }
+          </code>
+        </pre>
+        </p>
+      </article>      
+    </section>
+
+    <section id="Layout" class="main-section">
+      <header class="title-section">Layout</header>
+      <article>
+        <p>
+          <h2 class="mt-3 text-xl font-bold">Container</h2>
+          Un composant pour fixer la largeur d'un élément au point d'arrêt actuel.
+        </p>
+        <table class="w-full text-left table-collapse m-8">
+          <colgroup>
+            <col class="w-1/4">
+            <col class="w-1/4">
+            <col class="w-1/2">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Class</th>
+              <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Breakpoint</th>
+              <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Properties</th>
+            </tr>
+          </thead>
+          <tbody class="align-baseline">
+            <tr>
+              <td rowspan="5" class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700">.container</td>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-gray-600"><span
+                  class="font-sans italic font-sans">None</span></td>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700">width: 100%;</td>
+            </tr>
+            <tr>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-gray-700">sm <span
+                  class="text-gray-600 font-sans italic">(640px)</span></td>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700">max-width: 640px;</td>
+            </tr>
+            <tr>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-gray-700">md <span
+                  class="text-gray-600 font-sans italic">(768px)</span></td>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700">max-width: 768px;</td>
+            </tr>
+            <tr>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-gray-700">lg <span
+                  class="text-gray-600 font-sans italic">(1024px)</span></td>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700">max-width: 1024px;</td>
+            </tr>
+            <tr>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-gray-700">xl <span
+                  class="text-gray-600 font-sans italic">(1280px)</span></td>
+              <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700">max-width: 1280px;</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section id="Flexbox" class="main-section">
+      
+    </section>
+    <section id="Grid" class="main-section"></section>
+    <section id="Spacing" class="main-section"></section>
+    <section id="Sizing" class="main-section"></section>
+    <section id="Typography" class="main-section"></section>
+    <section id="Backgrounds" class="main-section"></section>
+    <section id="Borders" class="main-section"></section>
+    <section id="Tables" class="main-section"></section>
+    <section id="Effects" class="main-section"></section>
+    <section id="Transitions" class="main-section"></section>
+    <section id="Transforms" class="main-section"></section>
+    <section id="Interactivity" class="main-section"></section>
+    <section id="SVG" class="main-section"></section>
+    <section id="Accessibility" class="main-section"></section>
+
+  </main>
+</body>
+
+</html>
