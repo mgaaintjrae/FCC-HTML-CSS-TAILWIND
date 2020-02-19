@@ -125,3 +125,7 @@ color: var(--color-comment-gray);
   line-height: 1.5;
   color: #805ad5;
 }
+
+.text-md{
+  color: #8ac6d1;
+}
